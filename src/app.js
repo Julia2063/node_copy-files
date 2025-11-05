@@ -34,3 +34,5 @@ async function app() {
 }
 
 app();
+
+module.exports = { app };
