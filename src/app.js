@@ -22,21 +22,15 @@ async function app() {
   }
 
   if (source === destination) {
-    console.error('You try to copy to the same location!');
-
     return;
   }
 
   try {
     await copyFile(source, destination);
     console.log(`${source} was copied to ${destination}`);
-  } catch {
-    console.error('The file could not be copied');
+  } catch (e) {
+    console.error(`The file could not be copied. Error: ${e}`);
   }
 }
 
 app();
-
-module.exports = {
-  app,
-};
